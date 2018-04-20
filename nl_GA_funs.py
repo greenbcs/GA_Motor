@@ -10,8 +10,9 @@ def ys(pop): #pop is a multi-array\
         #函数1
         # y = -5 * np.sin(pop[i][0]) * np.sin(pop[i][1]) * np.sin(pop[i][2]) * np.sin(pop[i][3]) * np.sin(pop[i][4]) - np.sin(5*pop[i][0]*5*pop[i][1]*5*pop[i][2]*5*pop[i][3]*5*pop[i][4]) + 8
         #函数2
-        y = -20 * np.exp(-0.2 * ((pop[i][0] ** 2 + pop[i][1] ** 2) / 2) ** (1 / 2.0)) - np.exp(
-            1 / 2.0 * (np.cos(2 * np.pi * pop[i][0]) + np.cos(2 * np.pi * pop[i][1]))) + 20 + 2.71289
+        #y = -20 * np.exp(-0.2 * ((pop[i][0] ** 2 + pop[i][1] ** 2) / 2) ** (1 / 2.0)) - np.exp(
+        #    1 / 2.0 * (np.cos(2 * np.pi * pop[i][0]) + np.cos(2 * np.pi * pop[i][1]))) + 20 + 2.71289
+        y = (pop[i][0] ** 2 + pop[i][1] ** 2) ** 0.25 * (np.sin((50 * (pop[i][0] ** 2 + pop[i][1] ** 2)) ** 0.1) + 1);
         ys.append(y)
     return ys
 
